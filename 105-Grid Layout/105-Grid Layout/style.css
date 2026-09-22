@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    padding: 30px 15px;
+    background: #080b14;
+    font-family: system-ui,'Segoe UI', sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px 50px 200px 50px 60px;
+    gap: 10px;
+
+    grid-template-areas: 
+        'header header header header'
+        'left banner banner right'
+        'left content content right'
+        'left small small right'
+        'footer footer footer footer'
+
+    ;
+
+}
+
+.container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #f8fafc;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.header{
+    background: #2563eb;
+    grid-area: header;
+}
+
+.left{
+    background: #059669;
+    grid-area: left;
+}
+
+.banner{
+    background: #e11d48;
+    grid-area: banner;
+}
+
+.content{
+    background: #7c3aed;
+    grid-area: content;
+}
+
+.right{
+    background: #d97706;
+    grid-area: right;
+}
+
+.small{
+    background: #0891b2;
+    grid-area: small;
+}
+
+.footer{
+    background: #334155;
+    grid-area: footer;
+}
+
+/* Tablet view */
+@media (max-width: 1023px){
+    .container{
+        grid-template-rows: 80px 50px 200px 50px 60px;
+
+        grid-template-areas: 
+        'header header header header'
+        'left banner banner banner'
+        'left content content content'
+        'left small small small'
+        'left right right right'
+        'footer footer footer footer'
+
+    ;
+    }
+}
+
+/* Mobile view */
+
+@media (max-width: 600px) {
+    
+    body{
+        padding: 15px 10px;
+    }
+    
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 100px 50px 200px 50px 100px 60px;
+        grid-template-areas: 
+            'header'
+            'left'
+            'banner'
+            'content'
+            'small'
+            'right'
+            'footer'
+        ;
+    }
+
+    .container div{
+        font-size: 18px;
+    }
+
+}
+

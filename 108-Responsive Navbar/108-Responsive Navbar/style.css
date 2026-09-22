@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #ecf0f3;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* navbar */
+nav{
+    width: 100%;
+    padding: 12px 0;
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .menu{
+    max-width: 1270px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a{
+    font-size: 28px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #31344b;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li a{
+    margin: 0 8px;
+    padding: 10px 12px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #31344b;
+    box-shadow: -3px -3px 7px #fff, 3px 3px 5px #ceced1;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover{
+    color: #3498db;
+    box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px #ceced1;
+}
+
+/* Buttons style */
+nav .btn{
+    color: #31344d;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/* Section style */
+section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section h1{
+    font-size: 50px;
+    color: #31344b;
+}
+
+/* Responsive Navbar style */
+@media (max-width: 940px){
+
+    .menu ul{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        padding-top: 80px;
+        display: block;
+        background: #ecf0f3;
+        box-shadow: 50px 0 10px #b0b0b5;
+        transition: 0.3s;
+    }
+
+    .menu ul li a{
+        font-size: 20px;
+        text-align: center;
+        box-shadow: none;
+    }
+    nav .bars{
+        display: block;
+    }
+
+    nav .cancel{
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+    }
+
+    #check:checked~ul{
+        left: 0;
+    }
+
+    #check:checked~.bars{
+        display: none;
+    }
+
+}
